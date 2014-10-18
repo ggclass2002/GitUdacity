@@ -1,0 +1,46 @@
+Some thought about learning GIT.
+
+Keeping track of basic git commands:
+
+cd folder_name (change directory to folder_name)
+
+ls (lists visible files in directory)
+ls -a (lists all files, including hidden ones)
+
+git --version (to check latest version)
+
+git clone <url> (to clone a repository)
+
+git config --global color.ui auto (to allow for insertion/deletion formatting)
+
+git log (check commits) 
+	use 'q' to quit its output
+
+git diff <id_1> <id_2> (compare commits)
+	use 'q' to quit its output
+
+git init (creates a git repository in current folder)
+
+git status (checks which files have changed since last commit)
+
+git checkout <id> (opens that commit)
+	HEAD is the latest commit
+	Detached HEAD warns about working with previous commit
+
+Configuirng user name and email address:
+	Run git config --global user.name "Your name"
+    	Run git config --global user.email "youremail@domain.com"
+
+Configuring text editor:
+	git config --global core.editor "program_name -n -w"
+
+
+working directory
+	staging area (intermediate step before commiting)
+		repository
+
+git add <file> (adds file to staging area)
+
+git reset <file> (removes file from staging area)
+
+git commit 
