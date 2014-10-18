@@ -33,7 +33,7 @@ Configuirng user name and email address:
 
 Configuring text editor:
 	git config --global core.editor "program_name -n -w"
-
+or	git config --global core.editor "'C:/Program Files/Sublime Text 2/sublime_text.exe' -n -w"
 
 working directory
 	staging area (intermediate step before commiting)
@@ -44,3 +44,5 @@ git add <file> (adds file to staging area)
 git reset <file> (removes file from staging area)
 
 git commit 
+	text editor opens: include note of change made at the top.
+	save the note and close window to be able to continue.
