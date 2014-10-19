@@ -3,9 +3,11 @@ Some thought about learning GIT.
 Keeping track of basic git commands:
 
 cd folder_name (change directory to folder_name)
+cd .. (moves directory one level up)
 
 ls (lists visible files in directory)
 ls -a (lists all files, including hidden ones)
+pwd (shows current path)
 
 git --version (to check latest version)
 
@@ -15,9 +17,13 @@ git config --global color.ui auto (to allow for insertion/deletion formatting)
 
 git log (check commits) 
 	use 'q' to quit its output
+git log -n2 (only shows two commit, and so on)
 
 git diff <id_1> <id_2> (compare commits)
 	use 'q' to quit its output
+git diff (with no id's shows differences in working directory and staging area)
+
+git diff --staged (differences in staging area and last commit)
 
 git init (creates a git repository in current folder)
 
@@ -26,6 +32,7 @@ git status (checks which files have changed since last commit)
 git checkout <id> (opens that commit)
 	HEAD is the latest commit
 	Detached HEAD warns about working with previous commit
+git checkout master (to reattach HEAD)
 
 Configuirng user name and email address:
 	Run git config --global user.name "Your name"
@@ -43,6 +50,64 @@ git add <file> (adds file to staging area)
 
 git reset <file> (removes file from staging area)
 
+git reset --hard (resets files in stagin area but intermediate changes may be lost)
+
 git commit 
 	text editor opens: include note of change made at the top.
 	save the note and close window to be able to continue.
+
+Branches:
+	Master: main branch
+	branch tip: latest commit on a branch
+
+git branch (shows current branches)
+git branch <new_branch_name> (creates a new branch)
+git checkout <branch name> (moves to that branch)
+
+	"remote branch" means someone else created that branch
+git checkout -b <new_branch name> (equivalente to running branch and checkout in two steps)
+
+Combining changes:
+	git merge master somebranch (merges somebranch into master)
+			editor opens to make note about commit; includes default note
+		make sure to checkout the two branches you want to merge
+		otherwise it will merge with the third one you're currently on
+		
+	git merge --abort (restores files to state before running merge)
+
+	git show <commit_id> (compares commit to its parent without having to specify parent)
+				(useful to compare previous commits of merged branches)
+
+	git branch -d somebranch (deletes somebranch label, not the branch)
+
+		when git can't decide on changes it will send a warning message
+		to resolve conflicts manually:	
+		resolve them manually, save file, add to commit and commit.
+
+
+
+git log --graph --oneline master <some_branch> (shows something)
+
+github:
+
+create repository (check readme when there are no commits)
+
+recall to go to the directory where repository is found.
+
+git remote (checks repositories from github account)
+git remote -v (gives more info)
+
+git remote add <name> <url> (add a local repository to github)
+				url is found on github webpage where repository was created
+
+git push <remotename> <branchname> (what branch gets pushed to github)
+	gitbash will ask for username and password
+	can get authenticated following some other setup
+
+git pull <remotename> <branchname> (pulling a branch from github to local repository)
+
+Can create and edit files directly on github
+
+forking: creating a copy of an existing repository in github
+		without copying repository to local computer
+
